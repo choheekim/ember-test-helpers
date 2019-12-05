@@ -31,6 +31,14 @@ export class TestMetadata implements ITestMetadata {
   get isApplication() {
     return this.setupTypes.indexOf('setupApplicationContext') > -1;
   }
+
+  get isContainer() {
+    return (
+      this.setupTypes.indexOf('setupContext') > -1 &&
+      this.usedHelpers.indexOf('render') == -1 &&
+      this.usedHelpers.indexOf('click') == -1
+    );
+  }
 }
 
 const TEST_METADATA = new WeakMap<BaseContext, ITestMetadata>();

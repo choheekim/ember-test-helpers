@@ -130,13 +130,13 @@ module('setupContext', function(hooks) {
         assert.deepEqual(testMetadata.setupTypes, ['setupContext']);
       });
 
-      test('it retutns true for isContainer in container tests', function(assert) {
+      test('it returns true for isContainer in container tests', function(assert) {
         let testMetadata = getTestMetadata(context);
 
         assert.ok(testMetadata.isContainer);
       });
 
-      test('it retutns false for isRendering/isApplication/isContainer in non-rendering/application/container tests', function(assert) {
+      test('it returns false for isRendering/isApplication/isContainer in non-rendering/application/container tests', function(assert) {
         let testMetadata = getTestMetadata(this);
 
         assert.ok(!testMetadata.isRendering);
